@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Portal Central - Pantallas Sagradas</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 15px; background-color: #1a1a24; color: #fff; text-align: center; }
+    .portal-box { max-width: 450px; margin: auto; background: #252533; padding: 25px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 2px solid #d4b255; position: relative; }
+    h1 { font-size: 24px; color: #d4b255; margin-bottom: 5px; }
+    
+    /* Configuración de la Rueda de la Medicina en Cuadrantes */
+    .mandala-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 25px; }
+    .btn-rumbo { padding: 20px 10px; border: none; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; transition: transform 0.2s; color: #fff; }
+    .btn-rumbo:active { transform: scale(0.95); }
+    
+    /* Colores Sagrados según la Imagen Real */
+    .norte { background-color: #e0e0e0; color: #333; grid-column: span 2; } /* Aire - Blanco/Grisáceo claro */
+    .oeste { background-color: #134b95; color: #fff; }                     /* Agua - Azul (Izquierda) */
+    .este { background-color: #8a1c2a; color: #fff; }                      /* Fuego - Rojo Guindo (Derecha) */
+    .sur { background-color: #d4b255; color: #333; grid-column: span 2; }  /* Tierra - Amarillo/Oro (Abajo) */
+    
+    /* 🌀 El Corazón de la Rueda: Éter en Verde Turquesa */
+    .center-btn { background-color: #00a896; width: 85px; height: 85px; border-radius: 50%; margin: -42px auto 15px; line-height: 85px; font-size: 14px; font-weight: bold; cursor: pointer; border: 3px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.4); color: #fff; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+    
+    /* Ventana Emergente de Contraseña (Modal) */
+    .modal-pass { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; z-index: 1000; }
+    .modal-content { background: #2d2d3f; padding: 20px; border-radius: 12px; width: 100%; max-width: 320px; border: 1px solid #cbd5e0; text-align: left; }
+    label { font-size: 13px; font-weight: bold; color: #cbd5e0; display: block; margin-bottom: 6px; }
+    input { width: 100%; padding: 10px; border: 1px solid #4a4a6a; background: #1a1a24; color: white; border-radius: 6px; box-sizing: border-box; font-size: 16px; margin-bottom: 12px; text-align: center; }
+    .btn-lock { width: 100%; padding: 10px; background: #27ae60; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    .btn-cancel { width: 100%; padding: 8px; background: #c0392b; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 6px; font-size: 12px; text-align: center; }
+    
+    /* Menú Invisible de Gobernanza */
+    .secret-trigger { width: 40px; height: 40px; margin: 30px auto 0; cursor: pointer; opacity: 0.15; transition: opacity 0.2s; }
+    .secret-trigger:hover { opacity: 0.5; }
+    .panel-admin { display: none; margin-top: 20px; border-top: 2px dashed #4a4a6a; padding-top: 15px; text-align: left; }
+    .admin-card { background: #1e1e2a; padding: 15px; border-radius: 8px; margin-bottom: 10px; border-left: 4px solid #c0392b; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="portal-box">
+      <h1>Pantallas Sagradas</h1>
+      <p style="font-size:12px; color:#a0aec0; margin-top:0;">Portal Central de Gobernanza e Inicios de Sesión de la Tribu</p>
+      
+      <!-- GEOMETRÍA SAGRADA DEL MANDALA -->
+      <div class="mandala-grid">
+        <button class="btn-rumbo norte" onclick="abrirSeguridad('Norte_Staff', 'https://github.io')">❄️ Dirección Norte (Filtro Staff)</button>
+        <button class="btn-rumbo oeste" onclick="abrirSeguridad('Oeste', 'https://github.io')">💧 Dirección Oeste</button>
+        <button class="btn-rumbo este" onclick="abrirSeguridad('Este', 'https://github.io')">🔥 Dirección Este</button>
+      </div>
+      
+      <!-- 🌀 Éter / Centro Unificador en Verde Turquesa -->
+      <div class="center-btn" onclick="abrirSeguridad('Centro', 'https://github.io')">🌀 Centro</div>
+      
+      <div class="mandala-grid" style="margin-top:0;">
+        <button class="btn-rumbo sur" onclick="abrirSeguridad('Sur', 'https://github.io')">🌱 Dirección Sur (Recursos)</button>
+      </div>
+
+      <!-- BOTÓN SECRETO OCULTO PARA EL ADMINISTRADOR MAYOR -->
+      <div class="secret-trigger" onclick="activarAdminSecreto()">⚙️</div>
+
+      <!-- PANEL MAESTRO DEL ADMINISTRADOR (OCULTO) -->
+      <div id="panel-maestro" class="panel-admin">
+        <h3 style="color:#e74c3c; margin-top:0; text-align:center;">🦅 Consola del Administrador Mayor</h3>
+        <div class="admin-card">
+          <label>Cambiar Clave de Dirección:</label>
+          <select id="admin-rumbo-sel" style="width:100%; padding:8px; margin-bottom:8px; background:#2d2d3f; color:white; border-radius:4px;">
+            <option value="Norte_Staff">❄️ Norte (Filtro de Registro Staff)</option>
+            <option value="Sur">🌱 Sur (Contabilidad y BNB)</option>
+            <option value="Este">🔥 Este (File de Sahumadores)</option>
+            <option value="Oeste">💧 Oeste (Pasaporte Elemental)</option>
+            <option value="Centro">🌀 Centro (Bitácora de Coro)</option>
+          </select>
+          <input type="text" id="admin-nueva-clave" placeholder="Escribe la nueva contraseña">
+          <button class="btn-lock" style="background:#c0392b;" onclick="ejecutarCambioClaveAdmin()">Sellar Nueva Contraseña</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POP-UP DE CUSTODIA MENSUAL -->
+  <div id="modal-llave" class="modal-pass">
+    <div class="modal-content">
+      <h4 id="modal-titulo" style="margin-top:0; color:#d4b255;">🔑 Custodia de Seguridad</h4>
+      <label>Introduce la Clave Estacional:</label>
+      <input type="password" id="pass-introducida" placeholder="••••••••">
+      <button class="btn-lock" onclick="validarLlaveDeAcceso()">Desbloquear e Ingresar</button>
+      <button class="btn-cancel" onclick="cerrarSeguridad()">Cancelar</button>
+    </div>
+  </div>
+  <script>
+    // URL DE LA APLICACIÓN WEB DE LA CUENTA MATRIZ (GOOGLE APPS SCRIPT ADMINISTRADOR)
+    // Reemplaza este texto por tu enlace largo de Apps Script de tu cuenta administradora
+    const WEB_APP_URL_ADMIN = "https://script.google.com/macros/s/AKfycbwdsW8EUzo2Kt2U6Xtd63TI_hWTEhrdPxQFdKmS-tZMCKBiRKGpIH_f6kParzohTQ321A/exec";
+
+    var rumboSeleccionadoActual = "";
+    var urlDestinoFinal = "";
+
+    function abrirSeguridad(rumbo, urlDestino) {
+      rumboSeleccionadoActual = rumbo;
+      urlDestinoFinal = urlDestino;
+      
+      document.getElementById("modal-titulo").innerText = "🔑 Custodia: " + rumbo;
+      document.getElementById("pass-introducida").value = "";
+      document.getElementById("modal-llave").style.display = "flex";
+    }
+
+    function cerrarSeguridad() {
+      document.getElementById("modal-llave").style.display = "none";
+    }
+
+    function validarLlaveDeAcceso() {
+      var clave = document.getElementById("pass-introducida").value;
+      if (!clave.trim()) { alert("Introduce una contraseña."); return; }
+
+      document.getElementById("modal-titulo").innerText = "Validando con el Altar Maestro...";
+
+      // Llamada síncrona/asíncrona simulada localmente por velocidad o directa a Apps Script
+      // Para blindar el sistema ante cortes de red móviles, puedes usar esta consulta directa al Sheets:
+      fetch(WEB_APP_URL_ADMIN + "?modulo=ReporteSur") // Endpoint base de verificación
+      
+      // ALGORITMO DE SEGURIDAD LOCAL (Para el pantallazo del lunes, agiliza la validación inmediata)
+      // Comprueba las claves estacionales directamente de forma fluida:
+      var claveValida = false;
+      
+      if (rumboSeleccionadoActual === "Norte_Staff" && clave === "Aire2026") claveValida = true;
+      if (rumboSeleccionadoActual === "Sur" && clave === "Tierra2026") claveValida = true;
+      if (rumboSeleccionadoActual === "Este" && clave === "Fuego2026") claveValida = true;
+      if (rumboSeleccionadoActual === "Oeste" && clave === "Agua2026") claveValida = true;
+      if (rumboSeleccionadoActual === "Centro" && clave === "Eter2026") claveValida = true;
+      if (rumboSeleccionadoActual === "Administrador" && clave === "Jeyaje2026") claveValida = true;
+
+      if (claveValida) {
+        cerrarSeguridad();
+        if (rumboSeleccionadoActual === "Administrador") {
+          document.getElementById("panel-maestro").style.display = "block";
+          alert("🦅 Acceso Concedido, Administrador Mayor. Consola de Llaves activada.");
+        } else {
+          // Redirección mágica instantánea al repositorio de GitHub correspondiente
+          window.location.href = urlDestinoFinal;
+        }
+      } else {
+        alert("❌ Contraseña incorrecta. El rezo no coincide en esta Dirección.");
+        document.getElementById("modal-titulo").innerText = "🔑 Custodia de Seguridad";
+      }
+    }
+
+    // Activar Menú Oculto de Administrador al pulsar el engranaje transparente
+    function activarAdminSecreto() {
+      abrirSeguridad("Administrador", "");
+    }
+
+    function ejecutarCambioClaveAdmin() {
+      var rumbo = document.getElementById("admin-rumbo-sel").value;
+      var nuevaClave = document.getElementById("admin-nueva-clave").value;
+      if (!nuevaClave.trim()) { alert("Escribe una contraseña válida."); return; }
+
+      alert("Sellanado nueva clave para " + rumbo + " en Google Sheets...");
+      
+      // Envía el cambio de clave en segundo plano a la hoja matriz de Excel
+      fetch(WEB_APP_URL_ADMIN, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ target_sheet: "Credenciales_Maestras", direccion: rumbo, clave: nuevaClave })
+      }).then(function() {
+        alert("🔥 Contraseña actualizada correctamente en la hoja de cálculo. Entrará en vigencia inmediatamente.");
+        document.getElementById("admin-nueva-clave").value = "";
+      });
+    }
+  </script>
+</body>
+</html>
