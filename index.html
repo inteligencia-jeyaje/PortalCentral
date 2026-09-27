@@ -9,19 +9,72 @@
     .portal-box { max-width: 450px; margin: auto; background: #252533; padding: 25px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 2px solid #d4b255; position: relative; }
     h1 { font-size: 24px; color: #d4b255; margin-bottom: 5px; }
     
-    /* Configuración de la Rueda de la Medicina en Cuadrantes */
-    .mandala-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 25px; }
-    .btn-rumbo { padding: 20px 10px; border: none; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; transition: transform 0.2s; color: #fff; }
+    /* 🌀 MATRIZ DE INGENIERÍA EN CRUZ (Reflejo del Altar Real) */
+    .mandala-contenedor { 
+      display: grid; 
+      grid-template-columns: 100px 110px 100px; 
+      grid-template-rows: auto auto auto;
+      justify-content: center;
+      align-items: center;
+      margin: 30px auto;
+      gap: 15px;
+    }
+    
+    .btn-rumbo { 
+      padding: 15px 5px; 
+      border: none; 
+      border-radius: 8px; 
+      font-size: 13px; 
+      font-weight: bold; 
+      cursor: pointer; 
+      transition: transform 0.2s; 
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
     .btn-rumbo:active { transform: scale(0.95); }
     
-    /* Colores Sagrados según la Imagen Real */
-    .norte { background-color: #e0e0e0; color: #333; grid-column: span 2; } /* Aire - Blanco/Grisáceo claro */
-    .oeste { background-color: #134b95; color: #fff; }                     /* Agua - Azul (Izquierda) */
-    .este { background-color: #8a1c2a; color: #fff; }                      /* Fuego - Rojo Guindo (Derecha) */
-    .sur { background-color: #d4b255; color: #333; grid-column: span 2; }  /* Tierra - Amarillo/Oro (Abajo) */
+    /* Posicionamiento y Colores Sagrados del Altar */
+    .norte { 
+      background-color: #e2e8f0; color: #1a202c; 
+      grid-column: 2; grid-row: 1; 
+      width: 100%; height: 50px;
+    }
+    .oeste { 
+      background-color: #134b95; 
+      grid-column: 1; grid-row: 2; 
+      width: 100%; height: 90px; /* Posición Vertical Izquierda */
+    }
+    /* El Este encendido en Rojo Fuego/Sangre Vivo */
+    .este { 
+      background-color: #df2020; 
+      grid-column: 3; grid-row: 2; 
+      width: 100%; height: 90px; /* Posición Vertical Derecha */
+    }
+    .sur { 
+      background-color: #d4b255; color: #1a202c; 
+      grid-column: 2; grid-row: 3; 
+      width: 100%; height: 50px;
+    }
     
-    /* 🌀 El Corazón de la Rueda: Éter en Verde Turquesa */
-    .center-btn { background-color: #00a896; width: 85px; height: 85px; border-radius: 50%; margin: -42px auto 15px; line-height: 85px; font-size: 14px; font-weight: bold; cursor: pointer; border: 3px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.4); color: #fff; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+    /* 🌀 El Corazón del Altar: Verde Turquesa en el Centro exacto */
+    .center-btn { 
+      background-color: #00a896; 
+      grid-column: 2; grid-row: 2;
+      width: 90px; height: 90px; 
+      border-radius: 50%; 
+      margin: 0 auto;
+      line-height: 84px; 
+      font-size: 14px; 
+      font-weight: bold; 
+      cursor: pointer; 
+      border: 3px solid #fff; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4); 
+      color: #fff; 
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
     
     /* Ventana Emergente de Contraseña (Modal) */
     .modal-pass { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; z-index: 1000; }
@@ -29,13 +82,14 @@
     label { font-size: 13px; font-weight: bold; color: #cbd5e0; display: block; margin-bottom: 6px; }
     input { width: 100%; padding: 10px; border: 1px solid #4a4a6a; background: #1a1a24; color: white; border-radius: 6px; box-sizing: border-box; font-size: 16px; margin-bottom: 12px; text-align: center; }
     .btn-lock { width: 100%; padding: 10px; background: #27ae60; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
-    .btn-cancel { width: 100%; padding: 8px; background: #c0392b; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 6px; font-size: 12px; text-align: center; }
+    .btn-cancel { width: 100%; padding: 8px; background: #c0392b; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 6px; font-size: 12px; text-align: center; display: block; text-decoration: none; }
     
     /* Menú Invisible de Gobernanza */
-    .secret-trigger { width: 40px; height: 40px; margin: 30px auto 0; cursor: pointer; opacity: 0.15; transition: opacity 0.2s; }
+    .secret-trigger { width: 40px; height: 40px; margin: 20px auto 0; cursor: pointer; opacity: 0.15; transition: opacity 0.2s; }
     .secret-trigger:hover { opacity: 0.5; }
     .panel-admin { display: none; margin-top: 20px; border-top: 2px dashed #4a4a6a; padding-top: 15px; text-align: left; }
     .admin-card { background: #1e1e2a; padding: 15px; border-radius: 8px; margin-bottom: 10px; border-left: 4px solid #c0392b; }
+    select { width: 100%; padding: 10px; background: #2d2d3f; color: white; border: 1px solid #4a4a6a; border-radius: 6px; font-size: 14px; margin-bottom: 8px; }
   </style>
 </head>
 <body>
@@ -43,32 +97,38 @@
   <div class="container">
     <div class="portal-box">
       <h1>Pantallas Sagradas</h1>
-      <p style="font-size:12px; color:#a0aec0; margin-top:0;">Portal Central de Gobernanza e Inicios de Sesión de la Tribu</p>
+      <p style="font-size:12px; color:#a0aec0; margin-top:0;">Portal Central de Gobernanza de la Tribu</p>
       
-      <!-- GEOMETRÍA SAGRADA DEL MANDALA -->
-      <div class="mandala-grid">
-        <button class="btn-rumbo norte" onclick="abrirSeguridad('Norte_Staff', 'https://github.io')">❄️ Dirección Norte (Filtro Staff)</button>
-        <button class="btn-rumbo oeste" onclick="abrirSeguridad('Oeste', 'https://github.io')">💧 Dirección Oeste</button>
-        <button class="btn-rumbo este" onclick="abrirSeguridad('Este', 'https://github.io')">🔥 Dirección Este</button>
-      </div>
-      
-      <!-- 🌀 Éter / Centro Unificador en Verde Turquesa -->
-      <div class="center-btn" onclick="abrirSeguridad('Centro', 'https://github.io')">🌀 Centro</div>
-      
-      <div class="mandala-grid" style="margin-top:0;">
-        <button class="btn-rumbo sur" onclick="abrirSeguridad('Sur', 'https://github.io')">🌱 Dirección Sur (Recursos)</button>
+      <!-- GEOMETRÍA SAGRADA EN CRUZ -->
+      <div class="mandala-contenedor">
+        
+        <!-- Norte (Aire - Arriba con Cara de Viento 🌬️) -->
+        <button class="btn-rumbo norte" onclick="abrirSeguridad('Norte_Staff', 'https://inteligencia-jeyaje.github.io/registro-jeyaje/')">🌬️ Norte</button>
+        
+        <!-- Oeste (Agua - Izquierda Vertical) -->
+        <button class="btn-rumbo oeste" onclick="abrirSeguridad('Oeste', 'https://inteligencia-jeyaje.github.io/app-oeste/')">💧<br>O<br>e<br>s<br>t<br>e</button>
+        
+        <!-- 🌀 Centro Unificador (Éter - Círculo Verde Turquesa) -->
+        <div class="center-btn" onclick="abrirSeguridad('Centro', 'https://inteligencia-jeyaje.github.io/app-centro/')">🌀 Centro</div>
+        
+        <!-- Este (Fuego - Derecha Vertical) -->
+        <button class="btn-rumbo este" onclick="abrirSeguridad('Este', 'https://inteligencia-jeyaje.github.io/App-este/')">🔥<br>E<br>s<br>t<br>e</button>
+        
+        <!-- Sur (Tierra - Abajo) -->
+        <button class="btn-rumbo sur" onclick="abrirSeguridad('Sur', 'https://inteligencia-jeyaje.github.io/app-sur/')">🌱 Sur</button>
+        
       </div>
 
-      <!-- BOTÓN SECRETO OCULTO PARA EL ADMINISTRADOR MAYOR -->
+      <!-- BOTÓN SECRETO OCULTO PARA EL ADMINISTRADOR -->
       <div class="secret-trigger" onclick="activarAdminSecreto()">⚙️</div>
 
       <!-- PANEL MAESTRO DEL ADMINISTRADOR (OCULTO) -->
       <div id="panel-maestro" class="panel-admin">
-        <h3 style="color:#e74c3c; margin-top:0; text-align:center;">🦅 Consola del Administrador Mayor</h3>
+        <h3 style="color:#e74c3c; margin-top:0; text-align:center;">🦅 Consola del Administrator Mayor</h3>
         <div class="admin-card">
           <label>Cambiar Clave de Dirección:</label>
-          <select id="admin-rumbo-sel" style="width:100%; padding:8px; margin-bottom:8px; background:#2d2d3f; color:white; border-radius:4px;">
-            <option value="Norte_Staff">❄️ Norte (Filtro de Registro Staff)</option>
+          <select id="admin-rumbo-sel">
+            <option value="Norte_Staff">🌬️ Norte (Filtro de Registro Staff)</option>
             <option value="Sur">🌱 Sur (Contabilidad y BNB)</option>
             <option value="Este">🔥 Este (File de Sahumadores)</option>
             <option value="Oeste">💧 Oeste (Pasaporte Elemental)</option>
@@ -81,7 +141,7 @@
     </div>
   </div>
 
-  <!-- POP-UP DE CUSTODIA MENSUAL -->
+  <!-- POP-UP DE CAPTURA DE SEGURIDAD -->
   <div id="modal-llave" class="modal-pass">
     <div class="modal-content">
       <h4 id="modal-titulo" style="margin-top:0; color:#d4b255;">🔑 Custodia de Seguridad</h4>
