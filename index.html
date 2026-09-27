@@ -9,19 +9,20 @@
     .portal-box { max-width: 450px; margin: auto; background: #252533; padding: 25px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 2px solid #d4b255; position: relative; }
     h1 { font-size: 24px; color: #d4b255; margin-bottom: 5px; }
     
-    /* 🌀 MATRIZ DE INGENIERÍA EN CRUZ (Reflejo del Altar Real) */
+    /* 🌀 MATRIZ DE SIMETRÍA PERFECTA (4 Elementos Idénticos en Tamaño Alrededor del Eje) */
     .mandala-contenedor { 
       display: grid; 
-      grid-template-columns: 100px 110px 100px; 
-      grid-template-rows: auto auto auto;
+      grid-template-columns: 100px 100px 100px; 
+      grid-template-rows: 55px 90px 55px;
       justify-content: center;
       align-items: center;
-      margin: 30px auto;
+      margin: 35px auto;
       gap: 15px;
     }
     
     .btn-rumbo { 
-      padding: 15px 5px; 
+      width: 100%;
+      height: 55px; /* TODOS LOS BOTONES TIENEN AHORA EL MISMO TAMAÑO */
       border: none; 
       border-radius: 8px; 
       font-size: 13px; 
@@ -33,33 +34,29 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      box-sizing: border-box;
     }
     .btn-rumbo:active { transform: scale(0.95); }
     
-    /* Posicionamiento y Colores Sagrados del Altar */
+    /* Ubicación y Colores de los 4 Rumbos Equilibrados */
     .norte { 
       background-color: #e2e8f0; color: #1a202c; 
       grid-column: 2; grid-row: 1; 
-      width: 100%; height: 50px;
     }
     .oeste { 
       background-color: #134b95; 
       grid-column: 1; grid-row: 2; 
-      width: 100%; height: 90px; /* Posición Vertical Izquierda */
     }
-    /* El Este encendido en Rojo Fuego/Sangre Vivo */
     .este { 
       background-color: #df2020; 
       grid-column: 3; grid-row: 2; 
-      width: 100%; height: 90px; /* Posición Vertical Derecha */
     }
     .sur { 
       background-color: #d4b255; color: #1a202c; 
       grid-column: 2; grid-row: 3; 
-      width: 100%; height: 50px;
     }
     
-    /* 🌀 El Corazón del Altar: Verde Turquesa en el Centro exacto */
+    /* 🌀 El Corazón del Altar: Verde Turquesa en el Centro Exacto */
     .center-btn { 
       background-color: #00a896; 
       grid-column: 2; grid-row: 2;
@@ -124,7 +121,7 @@
 
       <!-- PANEL MAESTRO DEL ADMINISTRADOR (OCULTO) -->
       <div id="panel-maestro" class="panel-admin">
-        <h3 style="color:#e74c3c; margin-top:0; text-align:center;">🦅 Consola del Administrator Mayor</h3>
+        <h3 style="color:#e74c3c; margin-top:0; text-align:center;">🦅 Consola del Administrador Mayor</h3>
         <div class="admin-card">
           <label>Cambiar Clave de Dirección:</label>
           <select id="admin-rumbo-sel">
@@ -151,6 +148,7 @@
       <button class="btn-cancel" onclick="cerrarSeguridad()">Cancelar</button>
     </div>
   </div>
+
   <script>
     // URL DE LA APLICACIÓN WEB DE LA CUENTA MATRIZ (GOOGLE APPS SCRIPT ADMINISTRADOR)
     // Reemplaza este texto por tu enlace largo de Apps Script de tu cuenta administradora
