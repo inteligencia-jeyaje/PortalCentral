@@ -9,68 +9,77 @@
     .portal-box { max-width: 450px; margin: auto; background: #252533; padding: 25px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 2px solid #d4b255; position: relative; }
     h1 { font-size: 24px; color: #d4b255; margin-bottom: 5px; }
     
-    /* 🌀 MATRIZ DE SIMETRÍA PERFECTA (4 Elementos Idénticos en Tamaño Alrededor del Eje) */
+    /* 🌟 CANAL DIRECTO Y LIBRE PARA LA COMUNIDAD (NUEVOS E INVITADOS) */
+    .btn-comunidad-libre {
+      width: 100%;
+      padding: 16px;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+      box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+      transition: transform 0.2s;
+    }
+    .btn-comunidad-libre:active { transform: scale(0.98); }
+
+    /* 🌀 MATRIZ DE ORIENTACIÓN EN CRUZ SIMÉTRICA (Para los Guardianes y Servidores) */
     .mandala-contenedor { 
       display: grid; 
-      grid-template-columns: 100px 100px 100px; 
-      grid-template-rows: 55px 90px 55px;
+      grid-template-columns: 55px 100px 55px; 
+      grid-template-rows: 55px 100px 55px;
       justify-content: center;
       align-items: center;
-      margin: 35px auto;
+      margin: 35px auto 20px;
       gap: 15px;
     }
     
     .btn-rumbo { 
-      width: 100%;
-      height: 55px; /* TODOS LOS BOTONES TIENEN AHORA EL MISMO TAMAÑO */
       border: none; 
       border-radius: 8px; 
-      font-size: 13px; 
+      font-size: 11px; 
       font-weight: bold; 
       cursor: pointer; 
       transition: transform 0.2s; 
       color: #fff;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
       box-sizing: border-box;
+      padding: 5px;
     }
     .btn-rumbo:active { transform: scale(0.95); }
     
-    /* Ubicación y Colores de los 4 Rumbos Equilibrados */
+    /* 🌬️ Norte Configurado para Filtro Staff de Sahumadores */
     .norte { 
       background-color: #e2e8f0; color: #1a202c; 
       grid-column: 2; grid-row: 1; 
+      width: 100%; height: 55px;
     }
-    .oeste { 
-      background-color: #134b95; 
-      grid-column: 1; grid-row: 2; 
-    }
-    .este { 
-      background-color: #df2020; 
-      grid-column: 3; grid-row: 2; 
-    }
+    
+    /* 🌱 Sur: Recursos Contables */
     .sur { 
       background-color: #d4b255; color: #1a202c; 
       grid-column: 2; grid-row: 3; 
+      width: 100%; height: 55px;
     }
+    
+    /* 💧 Oeste y 🔥 Este: Formato Vertical Rotado Espejo (55x100) */
+    .oeste { background-color: #134b95; grid-column: 1; grid-row: 2; width: 55px; height: 100%; }
+    .este { background-color: #df2020; grid-column: 3; grid-row: 2; width: 55px; height: 100%; }
     
     /* 🌀 El Corazón del Altar: Verde Turquesa en el Centro Exacto */
     .center-btn { 
-      background-color: #00a896; 
-      grid-column: 2; grid-row: 2;
-      width: 90px; height: 90px; 
-      border-radius: 50%; 
-      margin: 0 auto;
-      line-height: 84px; 
-      font-size: 14px; 
-      font-weight: bold; 
-      cursor: pointer; 
-      border: 3px solid #fff; 
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4); 
-      color: #fff; 
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      background-color: #00a896; grid-column: 2; grid-row: 2;
+      width: 90px; height: 90px; border-radius: 50%; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: bold; cursor: pointer; border: 3px solid #fff; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4); color: #fff; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
     
     /* Ventana Emergente de Contraseña (Modal) */
@@ -81,8 +90,8 @@
     .btn-lock { width: 100%; padding: 10px; background: #27ae60; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
     .btn-cancel { width: 100%; padding: 8px; background: #c0392b; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 6px; font-size: 12px; text-align: center; display: block; text-decoration: none; }
     
-    /* Menú Invisible de Gobernanza */
-    .secret-trigger { width: 40px; height: 40px; margin: 20px auto 0; cursor: pointer; opacity: 0.15; transition: opacity 0.2s; }
+    /* Menú Invisible de Gobernanza Maestra */
+    .secret-trigger { width: 40px; height: 40px; margin: 15px auto 0; cursor: pointer; opacity: 0.15; transition: opacity 0.2s; }
     .secret-trigger:hover { opacity: 0.5; }
     .panel-admin { display: none; margin-top: 20px; border-top: 2px dashed #4a4a6a; padding-top: 15px; text-align: left; }
     .admin-card { background: #1e1e2a; padding: 15px; border-radius: 8px; margin-bottom: 10px; border-left: 4px solid #c0392b; }
@@ -96,27 +105,30 @@
       <h1>Pantallas Sagradas</h1>
       <p style="font-size:12px; color:#a0aec0; margin-top:0;">Portal Central de Gobernanza de la Tribu</p>
       
-      <!-- GEOMETRÍA SAGRADA EN CRUZ -->
+      <!-- ✨ BOTÓN DIRECTO: Acceso libre para la comunidad sin claves -->
+      <button class="btn-comunidad-libre" onclick="window.location.href='https://inteligencia-jeyaje.github.io/registro-jeyaje/'">✨ Inscripción Comunidad (Acceso Libre)</button>
+
+      <!-- GEOMETRÍA SAGRADA DEL MANDALA EN CRUZ SIMÉTRICA -->
       <div class="mandala-contenedor">
         
-        <!-- Norte (Aire - Arriba con Cara de Viento 🌬️) -->
-        <button class="btn-rumbo norte" onclick="abrirSeguridad('Norte_Staff', 'https://inteligencia-jeyaje.github.io/registro-jeyaje/')">🌬️ Norte</button>
+        <!-- Norte (Filtro Mensual exclusivo para el Staff de Sahumadores) -->
+        <button class="btn-rumbo norte" onclick="abrirSeguridad('Norte_Staff', 'https://inteligencia-jeyaje.github.io/registro-jeyaje/')">🌬️<br>Staff</button>
         
-        <!-- Oeste (Agua - Izquierda Vertical) -->
+        <!-- Oeste (Agua - Izquierda Vertical Compacto) -->
         <button class="btn-rumbo oeste" onclick="abrirSeguridad('Oeste', 'https://inteligencia-jeyaje.github.io/app-oeste/')">💧<br>O<br>e<br>s<br>t<br>e</button>
         
         <!-- 🌀 Centro Unificador (Éter - Círculo Verde Turquesa) -->
         <div class="center-btn" onclick="abrirSeguridad('Centro', 'https://inteligencia-jeyaje.github.io/app-centro/')">🌀 Centro</div>
         
-        <!-- Este (Fuego - Derecha Vertical) -->
+        <!-- Este (Fuego - Derecha Vertical Compacto) -->
         <button class="btn-rumbo este" onclick="abrirSeguridad('Este', 'https://inteligencia-jeyaje.github.io/App-este/')">🔥<br>E<br>s<br>t<br>e</button>
         
-        <!-- Sur (Tierra - Abajo) -->
-        <button class="btn-rumbo sur" onclick="abrirSeguridad('Sur', 'https://inteligencia-jeyaje.github.io/app-sur/')">🌱 Sur</button>
+        <!-- Sur (Tierra - Abajo Horizontal Compacto) -->
+        <button class="btn-rumbo sur" onclick="abrirSeguridad('Sur', 'https://inteligencia-jeyaje.github.io/app-sur/')">🌱<br>Sur</button>
         
       </div>
 
-      <!-- BOTÓN SECRETO OCULTO PARA EL ADMINISTRADOR -->
+      <!-- BOTÓN MAESTRO DE AJUSTES DEL ADMINISTRADOR -->
       <div class="secret-trigger" onclick="activarAdminSecreto()">⚙️</div>
 
       <!-- PANEL MAESTRO DEL ADMINISTRADOR (OCULTO) -->
@@ -125,7 +137,7 @@
         <div class="admin-card">
           <label>Cambiar Clave de Dirección:</label>
           <select id="admin-rumbo-sel">
-            <option value="Norte_Staff">🌬️ Norte (Filtro de Registro Staff)</option>
+            <option value="Norte_Staff">❄️ Norte (Filtro Mensual para Registro Staff)</option>
             <option value="Sur">🌱 Sur (Contabilidad y BNB)</option>
             <option value="Este">🔥 Este (File de Sahumadores)</option>
             <option value="Oeste">💧 Oeste (Pasaporte Elemental)</option>
@@ -150,85 +162,95 @@
   </div>
 
   <script>
-    // URL DE LA APLICACIÓN WEB DE LA CUENTA MATRIZ (GOOGLE APPS SCRIPT ADMINISTRADOR)
-    // Reemplaza este texto por tu enlace largo de Apps Script de tu cuenta administradora
-    const WEB_APP_URL_ADMIN = "https://script.google.com/macros/s/AKfycbwdsW8EUzo2Kt2U6Xtd63TI_hWTEhrdPxQFdKmS-tZMCKBiRKGpIH_f6kParzohTQ321A/exec";
+    const WEB_APP_URL_ADMIN = "https://script.google.com/macros/s/AKfycbyvaAJRTKfg8clYNghzwfPi6w1HP0axxu8HeyNTkZkw4azGtsBsRmjzNIx5fRJnQ2t6/exec";
 
     var rumboSeleccionadoActual = "";
     var urlDestinoFinal = "";
+    var baseCredencialesVivas = null;
+
+    function precargarLlavesDelSheets() {
+      fetch(WEB_APP_URL_ADMIN)
+        .then(res => res.json())
+        .then(data => { baseCredencialesVivas = data; })
+        .catch(() => { console.log("Usando claves de respaldo locales."); });
+    }
 
     function abrirSeguridad(rumbo, urlDestino) {
       rumboSeleccionadoActual = rumbo;
       urlDestinoFinal = urlDestino;
-      
       document.getElementById("modal-titulo").innerText = "🔑 Custodia: " + rumbo;
       document.getElementById("pass-introducida").value = "";
       document.getElementById("modal-llave").style.display = "flex";
+      precargarLlavesDelSheets();
     }
 
-    function cerrarSeguridad() {
-      document.getElementById("modal-llave").style.display = "none";
-    }
+    function cerrarSeguridad() { document.getElementById("modal-llave").style.display = "none"; }
 
     function validarLlaveDeAcceso() {
-      var clave = document.getElementById("pass-introducida").value;
-      if (!clave.trim()) { alert("Introduce una contraseña."); return; }
+      var claveIntroducida = document.getElementById("pass-introducida").value.trim();
+      if (!claveIntroducida) { alert("Introduce una contraseña."); return; }
 
-      document.getElementById("modal-titulo").innerText = "Validando con el Altar Maestro...";
+      document.getElementById("modal-titulo").innerText = "Abriendo compuertas...";
+      var accesoConcedido = false;
 
-      // Llamada síncrona/asíncrona simulada localmente por velocidad o directa a Apps Script
-      // Para blindar el sistema ante cortes de red móviles, puedes usar esta consulta directa al Sheets:
-      fetch(WEB_APP_URL_ADMIN + "?modulo=ReporteSur") // Endpoint base de verificación
+      // 1. VALIDACIÓN DINÁMICA DESDE TU HOJA MAESTRA DE GOOGLE
+      if (baseCredencialesVivas && baseCredencialesVivas.registros) {
+        var lista = baseCredencialesVivas.registros;
+        for (var i = 0; i < lista.length; i++) {
+          if (lista[i].direccion === rumboSeleccionadoActual && lista[i].clave === claveIntroducida) {
+            accesoConcedido = true;
+            break;
+          }
+        }
+      } 
       
-      // ALGORITMO DE SEGURIDAD LOCAL (Para el pantallazo del lunes, agiliza la validación inmediata)
-      // Comprueba las claves estacionales directamente de forma fluida:
-      var claveValida = false;
-      
-      if (rumboSeleccionadoActual === "Norte_Staff" && clave === "Aire2026") claveValida = true;
-      if (rumboSeleccionadoActual === "Sur" && clave === "Tierra2026") claveValida = true;
-      if (rumboSeleccionadoActual === "Este" && clave === "Fuego2026") claveValida = true;
-      if (rumboSeleccionadoActual === "Oeste" && clave === "Agua2026") claveValida = true;
-      if (rumboSeleccionadoActual === "Centro" && clave === "Eter2026") claveValida = true;
-      if (rumboSeleccionadoActual === "Administrador" && clave === "Jeyaje2026") claveValida = true;
+      // 2. RESPALDO LOCAL DE SEGURIDAD (CLAVES DE FÁBRICA)
+      if (!accesoConcedido) {
+        if (rumboSeleccionadoActual === "Norte_Guardian" && claveIntroducida === "2009") accesoConcedido = true;
+        if (rumboSeleccionadoActual === "Norte_Staff" && claveIntroducida === "Aire2026") accesoConcedido = true;
+        if (rumboSeleccionadoActual === "Sur" && claveIntroducida === "Tierra2026") accesoConcedido = true;
+        if (rumboSeleccionadoActual === "Este" && claveIntroducida === "Fuego2026") accesoConcedido = true;
+        if (rumboSeleccionadoActual === "Oeste" && claveIntroducida === "Agua2026") accesoConcedido = true;
+        if (rumboSeleccionadoActual === "Centro" && claveIntroducida === "Eter2026") accesoConcedido = true;
+        if (rumboSeleccionadoActual === "Administrador" && claveIntroducida === "Jeyaje2026") accesoConcedido = true;
+      }
 
-      if (claveValida) {
+      if (accesoConcedido) {
         cerrarSeguridad();
         if (rumboSeleccionadoActual === "Administrador") {
           document.getElementById("panel-maestro").style.display = "block";
-          alert("🦅 Acceso Concedido, Administrador Mayor. Consola de Llaves activada.");
+          alert("🦅 Consola del Administrador Mayor activada.");
         } else {
-          // Redirección mágica instantánea al repositorio de GitHub correspondiente
           window.location.href = urlDestinoFinal;
         }
       } else {
-        alert("❌ Contraseña incorrecta. El rezo no coincide en esta Dirección.");
+        alert("❌ Contraseña incorrecta para esta Dirección.");
         document.getElementById("modal-titulo").innerText = "🔑 Custodia de Seguridad";
       }
     }
 
-    // Activar Menú Oculto de Administrador al pulsar el engranaje transparente
-    function activarAdminSecreto() {
-      abrirSeguridad("Administrador", "");
-    }
+    function activarAdminSecreto() { abrirSeguridad("Administrador", ""); }
 
     function ejecutarCambioClaveAdmin() {
       var rumbo = document.getElementById("admin-rumbo-sel").value;
-      var nuevaClave = document.getElementById("admin-nueva-clave").value;
-      if (!nuevaClave.trim()) { alert("Escribe una contraseña válida."); return; }
+      var nuevaClave = document.getElementById("admin-nueva-clave").value.trim();
+      if (!nuevaClave) { alert("Escribe una contraseña válida."); return; }
 
-      alert("Sellanado nueva clave para " + rumbo + " en Google Sheets...");
+      document.getElementById("modal-titulo").innerText = "Sellanado en Google Sheets...";
       
-      // Envía el cambio de clave en segundo plano a la hoja matriz de Excel
       fetch(WEB_APP_URL_ADMIN, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ target_sheet: "Credenciales_Maestras", direccion: rumbo, clave: nuevaClave })
       }).then(function() {
-        alert("🔥 Contraseña actualizada correctamente en la hoja de cálculo. Entrará en vigencia inmediatamente.");
+        alert("🔥 Contraseña de '" + rumbo + "' modificada de forma exitosa en tu Google Sheets.");
         document.getElementById("admin-nueva-clave").value = "";
+        precargarLlavesDelSheets();
       });
     }
+
+    window.onload = precargarLlavesDelSheets;
   </script>
 </body>
 </html>
